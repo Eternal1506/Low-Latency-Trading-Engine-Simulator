@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --save 60 1 --loglevel warning
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 5
+
+  engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      redis:
+        condition: service_healthy
+    network_mode: host          # needed for UDP multicast
+    environment:
+      - REDIS_HOST=127.0.0.1
+    command: ["--strategy", "${STRATEGY:-momentum}", "--symbol", "${SYMBOL:-AAPL}"]
+
+volumes:
+  redis_data:

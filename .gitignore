@@ -1,0 +1,65 @@
+# ---- Build directories ----
+build/
+cmake-build-*/
+out/
+dist/
+
+# Nested project build dirs
+lxts/build/
+
+# ---- CMake generated files ----
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+install_manifest.txt
+compile_commands.json
+Makefile
+*.cmake.user
+
+# ---- Compiled objects / libraries / binaries ----
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.i*
+*.pdb
+*.idb
+
+# ---- Logs / runtime artifacts ----
+*.log
+*.pid
+*.seed
+*.stackdump
+
+# ---- Python / analysis tooling ----
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
