@@ -191,7 +191,3 @@ Add a row to the `base_price()` / `base_vol()` helpers in `feed/feed.hpp` and to
 Replace `FeedPublisher` with a real market data adapter (e.g. IEX TOPS, Alpaca, Interactive Brokers) — the `FeedSubscriber` interface accepts any `BookCallback`.
 
 ---
-
-## Resume Bullet (HRT SWE)
-
-> Built a low-latency trading engine simulator in C++17: UDP multicast market data feed at 20 Hz, lock-minimized order manager achieving p99 < 90µs round-trip, three plug-in trading strategies (EMA momentum, Bollinger Band mean reversion, market making), Redis state persistence via hiredis, and Python analysis tooling for real-time PnL visualization and latency profiling. Containerized with Docker Compose.
